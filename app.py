@@ -73,6 +73,9 @@ def index():
         except ValueError:
             reading = "Invalid birthdate format. Please use MM/DD/YYYY."
     return render_template('index.html', destiny_card=destiny_card, reading=reading)
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
+
