@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soul Oracle AI</title>
+</head>
+<body>
+    <h1>🔮 Welcome to Soul Oracle AI 🔮</h1>
+    <form method="POST">
+        <label>Enter your birthdate (MM/DD/YYYY):</label><br>
+        <input type="date" name="birthdate" required><br><br>
+        <label>Select a reading type:</label><br>
+        <select name="reading_type">
+            <option value="Love">Love</option>
+            <option value="Career">Career</option>
+            <option value="Spiritual Growth">Spiritual Growth</option>
+            <option value="Personal Insight">Personal Insight</option>
+            <option value="Life Path">Life Path</option>
+            <option value="Health">Health</option>
+            <option value="Past Life">Past Life</option>
+            <option value="Relationship Compatibility">Relationship Compatibility</option>
+        </select><br><br>
+        <button type="submit">Reveal My Reading</button>
+    </form>
+
+    {% if destiny_card %}
+        <h2>Your Destiny Card: {{ destiny_card }}</h2>
+    {% endif %}
+    {% if reading %}
+        <p><strong>Oracle Says:</strong> {{ reading }}</p>
+    {% endif %}
+</body>
+</html>
