@@ -12,7 +12,8 @@ def get_destiny_card(birthdate):
         "Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades", "Five of Spades", "Six of Spades", "Seven of Spades", "Eight of Spades", "Nine of Spades", "Ten of Spades", "Jack of Spades", "Queen of Spades", "King of Spades"
     ]
     index = sum(map(int, birthdate.replace("/", ""))) % 52
-    return destiny_cards[index]
+    return render_template('index.html', destiny_card=destiny_card, reading=reading)
+
 
 def oracle_ai(question_category):
     responses = {
